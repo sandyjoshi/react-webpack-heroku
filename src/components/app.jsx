@@ -11,7 +11,7 @@ export default class App extends React.Component {
   render() {
     return(
       <div>
-        <AppBar title="Contact Manager" showMenuIconButton={false} iconElementRight={<FlatButton label="Add" />} />
+        <AppBar title="Contact Manager" showMenuIconButton={false} iconElementRight={<FlatButton label="Add Contact" />} />
         <div>
           <h1> List of Contacts </h1>
           <Grid />

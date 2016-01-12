@@ -8,15 +8,15 @@ export default class Grid extends React.Component {
   }
 
   render () {
-    let items = [{ name : 'sandeep' , mobile : '9988776655' , email : 'abc@abc.com' }];
+    let items = [{ name : 'sandeep' , mobile : '9988776655' , email : 'abc@abc.com' },{ name : 'sandeep' , mobile : '9988776655' , email : 'abc@abc.com' },{ name : 'sandeep' , mobile : '9988776655' , email : 'abc@abc.com' },{ name : 'sandeep' , mobile : '9988776655' , email : 'abc@abc.com' }];
 
     return (
-      <div>
+      <ul className='grid'>
         {items.map(function (item, index) {
             return ( <Item {...item} /> )
           }, this)
         }
-      </div>
+      </ul>
     );
   }
 

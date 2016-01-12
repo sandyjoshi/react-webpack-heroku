@@ -1,0 +1,19 @@
+.contact-item{
+	border: 1px solid black;
+	display: inline-block;
+	min-width: 350px;
+	padding: 10px;
+
+	.image{
+		border: 1px solid black;
+		width: 128px;
+		height: 128px;
+		float: left;
+		display:inline-block;
+	}
+
+	.details{
+		display:inline-block;
+		padding-left: 10px;
+	}
+}
