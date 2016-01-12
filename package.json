@@ -1,0 +1,48 @@
+{
+  "name": "webpack-heroku-boilerplate",
+  "version": "1.0.0",
+  "description": "Heroku deployable boilerplate for React/Flux/Webpack apps.",
+  "main": "./src/entry.js",
+  "homepage": "https://github.com/wallacyyy/webpack-heroku",
+  "author": "Leonardo Couto",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "webpack --config ./webpack-prod.config.js --progress --colors",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wallacyyy/webpack-heroku.git"
+  },
+  "keywords": [
+    "react",
+    "flux",
+    "express",
+    "webpack",
+    "es6",
+    "es7",
+    "javascript"
+  ],
+  "dependencies": {
+    "babel": "^5.8.20",
+    "babel-core": "^5.8.19",
+    "babel-loader": "^5.3.2",
+    "classnames": "^2.1.3",
+    "css-loader": "^0.15.6",
+    "express": "^4.13.1",
+    "flux": "^2.0.3",
+    "file-loader": "^0.8.4",
+    "node-sass": "^3.2.0",
+    "path": "^0.11.14",
+    "react": "^0.13.3",
+    "sass-loader": "^1.0.3",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.10.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.0.5",
+    "react-hot-loader": "^1.2.8",
+    "webpack-dev-server": "^1.10.1"
+  }
+}
