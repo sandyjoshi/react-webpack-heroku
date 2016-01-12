@@ -14,7 +14,7 @@ export default class App extends React.Component {
       <div>
         <AppBar title="Contact Manager" showMenuIconButton={false} iconElementRight={<IconButton iconClassName="icon-add" />} />
         <div className="grid-container">
-          <h1> List of Contacts </h1>
+          <h1 className="header"> List of Contacts </h1>
           <Grid />
         </div>
       </div>

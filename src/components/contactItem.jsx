@@ -10,21 +10,19 @@ export default class Item extends React.Component {
   }
 
   render () {
+    let style = { padding : 0 , height : '32px' , width : '32px' };
+    let style2 = { padding : 0 , position : 'absolute', bottom : '0', height : '26px', 'min-width' : '52px' };
     return (
       <div className='contact-item'>
+        <IconButton className="delete-button" style={style} iconClassName="icon-delete" />
         <div className="image"></div>
         <div className="details">
           <h3 className="name">{ this.props.name }</h3>
-          <div>
-            <span className="title"> Phone Number : </span>
-            <span> { this.props.mobile } </span>
-          </div>
-          <div>
-            <span className="title"> Email : </span>
-            <span> { this.props.email } </span>
-          </div>
-          <IconButton iconClassName="icon-edit" />
-          <IconButton iconClassName="icon-delete" />
+          <div className="title">Phone Number :</div>
+          <div className="value">{ this.props.mobile }</div>
+          <div className="title">Email :</div>
+          <div className="value">{ this.props.email }</div>
+          <RaisedButton style={style2} label="edit" />
         </div>
       </div>
     );
