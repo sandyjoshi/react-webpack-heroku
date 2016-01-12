@@ -3,6 +3,8 @@
 	display: inline-block;
 	min-width: 350px;
 	padding: 10px;
+	text-align: left;
+
 
 	.image{
 		border: 1px solid black;
@@ -15,5 +17,10 @@
 	.details{
 		display:inline-block;
 		padding-left: 10px;
+	}
+
+	.name{
+		text-transform: capitalize;
+		margin: 0;
 	}
 }
