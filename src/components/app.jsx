@@ -7,12 +7,16 @@ import IconButton from 'material-ui/lib/icon-button';
 export default class App extends React.Component {
   constructor() {
     super();
-  }
+  };
+
+  handleAdd(){
+    this.props.history.pushState(null, '/add/');
+  };
 
   render() {
     return(
       <div>
-        <AppBar title="Contact Manager" showMenuIconButton={false} iconElementRight={<IconButton iconClassName="icon-add" />} />
+        <AppBar title="Contact Manager" onRightIconButtonTouchTap={this.handleAdd.bind(this)} showMenuIconButton={false} iconClassNameRight="icon-add" />
         <div className="grid-container">
           <h1 className="header"> List of Contacts </h1>
           <Grid />

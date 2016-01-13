@@ -9,9 +9,13 @@ export default class Item extends React.Component {
     super();
   }
 
+  handleAdd(){
+    this.Props.history.pushState(null, '/in/add/');
+  };
+
   render () {
     let style = { padding : 0 , height : '32px' , width : '32px' };
-    let style2 = { padding : 0 , position : 'absolute', bottom : '0', height : '26px', 'min-width' : '52px' };
+    let style2 = { padding : 0 , position : 'absolute', bottom : '0', height : '26px', minWidth : '52px' };
     return (
       <div className='contact-item'>
         <IconButton className="delete-button" style={style} iconClassName="icon-delete" />
