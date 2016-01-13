@@ -23,7 +23,7 @@ export default class Item extends React.Component {
         <div className="details">
           <h3 className="name">{ this.props.name }</h3>
           <div className="title">Phone Number :</div>
-          <div className="value">{ this.props.mobile }</div>
+          <div className="value">{ this.props.tel }</div>
           <div className="title">Email :</div>
           <div className="value">{ this.props.email }</div>
           <RaisedButton style={style2} label="edit" />

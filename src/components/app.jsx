@@ -3,10 +3,16 @@ import AppBar from 'material-ui/lib/app-bar';
 import FlatButton from 'material-ui/lib/flat-button';
 import Grid from './grid';
 import IconButton from 'material-ui/lib/icon-button';
+import {connect} from 'react-redux';
 
-export default class App extends React.Component {
+const mapStateToProps = (state) => ({
+    contacts: state.grid.contacts
+});
+
+export default class ContactManagerView extends React.Component {
   constructor() {
     super();
+    // ToDo : bind methods here , propType entries
   };
 
   handleAdd(){
@@ -19,9 +25,12 @@ export default class App extends React.Component {
         <AppBar title="Contact Manager" onRightIconButtonTouchTap={this.handleAdd.bind(this)} showMenuIconButton={false} iconClassNameRight="icon-add" />
         <div className="grid-container">
           <h1 className="header"> List of Contacts </h1>
-          <Grid />
+          <Grid contacts={this.props.contacts} />
         </div>
       </div>
     )
   }
 }
+
+export default connect(mapStateToProps, {})(ContactManagerView);
+

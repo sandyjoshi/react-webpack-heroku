@@ -6,9 +6,9 @@ import {
   routerStateReducer
 }
 from 'redux-router';
-// import list from './list';
+import grid from './grid';
 
 export default combineReducers({
-  // list,
+  grid,
   router: routerStateReducer
 });
