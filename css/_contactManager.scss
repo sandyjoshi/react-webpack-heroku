@@ -1,3 +1,5 @@
+$secondry-color:#FF4081;
+
 .grid-container{
 	text-align: center;
 }
@@ -8,4 +10,17 @@
 
 .grid{
 	padding:0px;
+	text-align: left;
+}
+
+.empty-note{
+    text-align: center;
+    padding-top: 100px;
+    font-size: 30px;
+}
+
+.plus-sign{
+	font-weight: bold;
+	font-size: 40px;
+	color: $secondry-color;
 }
