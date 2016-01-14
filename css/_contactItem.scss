@@ -1,5 +1,14 @@
 $total-width : 400;
 $image-width : 128;
+$image-height : 128;
+$light-color : #D4D4D4;
+
+%overflow{
+	white-space: nowrap;
+    width: $total-width - $image-width - 50;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .contact-item{
 	display: inline-block;
@@ -14,9 +23,9 @@ $image-width : 128;
 	}
 
 	.image{
-		border: 1px solid #D4D4D4;
+		border: 1px solid $light-color;
 		width: $image-width;
-		height: 128px;
+		height: $image-height;
 		float: left;
 		display:inline-block;
 		//background-image: url('https://scontent.xx.fbcdn.net/hprofile-xla1/v/t1.0-1/c94.0.320.320/p320x320/1379841_10150004552801901_469209496895221757_n.jpg?oh=f578646d6b6a8c62f42800c4ba176abc&oe=5709E3A7');
@@ -27,16 +36,10 @@ $image-width : 128;
 	.details{
 		display:inline-block;
 		padding-left: 10px;
-		height: 128px;
+		height: $image-height;
 		position: relative;
 	}
 
-	%overflow{
-		white-space: nowrap;
-	    width: $total-width - $image-width - 50;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	}
 	.value{
 	  @extend %overflow;
 	}
@@ -45,8 +48,7 @@ $image-width : 128;
 		margin: 0;
 		@extend %overflow;
 	}
-
 	.title{
-		color: #D4D4D4;
+		color: $light-color;
 	}
 }
