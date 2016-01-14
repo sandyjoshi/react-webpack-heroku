@@ -28,11 +28,11 @@ export default class Item extends React.Component {
         <IconButton className="delete-button" style={style} onFocus={this.handleCloseClick} iconClassName="icon-delete" />
         <div className="image"></div>
         <div className="details">
-          <h3 className="name">{ this.props.name }</h3>
+          <h3 className="name" title={ this.props.name }>{ this.props.name }</h3>
           <div className="title">Phone Number :</div>
-          <div className="value">{ this.props.tel }</div>
+          <div className="value" title={ this.props.tel }>{ this.props.tel }</div>
           <div className="title">Email :</div>
-          <div className="value">{ this.props.email }</div>
+          <div className="value" title={ this.props.email }>{ this.props.email }</div>
           <RaisedButton style={style2} label="edit" onTouchTap={this.handleEditClick}/>
         </div>
       </div>

@@ -1,6 +1,10 @@
+$total-width : 400;
+$image-width : 128;
+
 .contact-item{
 	display: inline-block;
-	min-width: 350px;
+	width: $total-width;
+	overflow: hidden;
 	margin: 10px;
 	text-align: left;
 
@@ -11,7 +15,7 @@
 
 	.image{
 		border: 1px solid #D4D4D4;
-		width: 128px;
+		width: $image-width;
 		height: 128px;
 		float: left;
 		display:inline-block;
@@ -27,9 +31,19 @@
 		position: relative;
 	}
 
+	%overflow{
+		white-space: nowrap;
+	    width: $total-width - $image-width - 50;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	}
+	.value{
+	  @extend %overflow;
+	}
 	.name{
 		text-transform: capitalize;
 		margin: 0;
+		@extend %overflow;
 	}
 
 	.title{
