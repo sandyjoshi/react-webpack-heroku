@@ -1,6 +1,10 @@
 import { createReducer }     from '../utils';
 
 const initialState = {
+	deleteDialod: false,
+	addDialod : false,
+	deletingContactId : null,
+	editingContactId : null,
     contacts:
     [
 		{
@@ -43,7 +47,7 @@ const initialState = {
 };
 
 export default createReducer(initialState, {
-  ['DELETE_ITEM'] : (state, payload) => {
+  ['EDIT_ITEM'] : (state, payload) => {
     return Object.assign({}, state, {
       list: payload.data.hits
     });
@@ -52,6 +56,62 @@ export default createReducer(initialState, {
   ['ADD_ITEM'] : (state, payload) => {
     return Object.assign({}, state, {
       list: list.push(payload)
+    });
+  },
+
+  ['SHOW_DIALOG'] : (state, payload) => {
+    return Object.assign({}, state, {
+      deleteDialod: true,
+      deletingContactId : payload
+    });
+  },
+
+  ['CLOSE_DIALOG'] : (state, payload) => {
+    return Object.assign({}, state, {
+       deleteDialod: false,
+       deletingContactId : null
+    });
+  },
+
+  ['SHOW_ADD_DIALOG'] : (state, payload) => {
+    let index = state.contacts.findIndex( (item) => payload == item.id );
+    let editingContact = state.contacts[index];
+    return Object.assign({}, state, {
+      addDialod: true,
+      editingContact : editingContact
+    });
+  },
+
+  ['CLOSE_ADD_DIALOG'] : (state, payload) => {
+    return Object.assign({}, state, {
+       addDialod: false,
+       editingContact : null
+    });
+  },
+
+  ['ADD_UPDATE_CONTACT'] : (state, payload) => {
+  	let updateId = payload.id;
+  	let index = state.contacts.findIndex( (item) => updateId == item.id );
+  	if( index > -1 ) {
+	  	state.contacts[index] = payload ;
+  	}
+  	else {
+  		// ToDo: change Generate ID method.
+  		payload.id = state.contacts[ state.contacts.length - 1 ].id + 1;
+	  	state.contacts.push(payload) ;
+  	}
+    return Object.assign({}, state, {
+  		addDialod: false,
+  		editingContact : null
+    });
+  },
+
+  ['DELET_CONFIRMAED'] : (state, payload) => {
+  	let deleteId = state.deletingContactId ;
+  	let index = state.contacts.findIndex( (item) => deleteId == item.id );
+  	state.contacts.splice( index , 1 );
+    return Object.assign({}, state, {
+    	deleteDialod: false,
     });
   }
 
