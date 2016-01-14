@@ -1,8 +1,8 @@
 import { createReducer }     from '../utils';
 
 const initialState = {
-	deleteDialod: false,
-	addDialod : false,
+	deleteDialog: false,
+	addDialog : false,
 	deletingContactId : null,
 	editingContactId : null,
     contacts:
@@ -61,14 +61,14 @@ export default createReducer(initialState, {
 
   ['SHOW_DIALOG'] : (state, payload) => {
     return Object.assign({}, state, {
-      deleteDialod: true,
+      deleteDialog: true,
       deletingContactId : payload
     });
   },
 
   ['CLOSE_DIALOG'] : (state, payload) => {
     return Object.assign({}, state, {
-       deleteDialod: false,
+       deleteDialog: false,
        deletingContactId : null
     });
   },
@@ -77,14 +77,14 @@ export default createReducer(initialState, {
     let index = state.contacts.findIndex( (item) => payload == item.id );
     let editingContact = state.contacts[index];
     return Object.assign({}, state, {
-      addDialod: true,
+      addDialog: true,
       editingContact : editingContact
     });
   },
 
   ['CLOSE_ADD_DIALOG'] : (state, payload) => {
     return Object.assign({}, state, {
-       addDialod: false,
+       addDialog: false,
        editingContact : null
     });
   },
@@ -101,7 +101,7 @@ export default createReducer(initialState, {
 	  	state.contacts.push(payload) ;
   	}
     return Object.assign({}, state, {
-  		addDialod: false,
+  		addDialog: false,
   		editingContact : null
     });
   },
@@ -111,7 +111,7 @@ export default createReducer(initialState, {
   	let index = state.contacts.findIndex( (item) => deleteId == item.id );
   	state.contacts.splice( index , 1 );
     return Object.assign({}, state, {
-    	deleteDialod: false,
+    	deleteDialog: false,
     });
   }
 

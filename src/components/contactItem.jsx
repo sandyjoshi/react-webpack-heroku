@@ -12,11 +12,11 @@ export default class Item extends React.Component {
   }
 
   handleCloseClick(){
-    this.props.onDeleteDialod(this.props.id);
+    this.props.onDeleteDialog(this.props.id);
   };
 
   handleEditClick(){
-    this.props.onEditDialod(this.props.id);
+    this.props.onEditDialog(this.props.id);
   };
 
   render () {

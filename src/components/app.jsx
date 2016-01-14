@@ -12,8 +12,8 @@ import AddDialog from './addDialog';
 
 const mapStateToProps = (state) => ({
     contacts: state.grid.contacts,
-    deleteDialod : state.grid.deleteDialod,
-    addDialod : state.grid.addDialod,
+    deleteDialog : state.grid.deleteDialog,
+    addDialog : state.grid.addDialog,
     editingContact : state.grid.editingContact
 
 });
@@ -70,12 +70,12 @@ export default class ContactManagerView extends React.Component {
         <AppBar title="Contact Manager" onRightIconButtonTouchTap={this.handleAdd.bind(this)} showMenuIconButton={false} iconClassNameRight="icon-add" />
         <div className="grid-container">
           <h1 className="header"> List of Contacts </h1>
-          <Grid contacts={this.props.contacts} onDeleteDialod={this.handleShowDialog.bind(this)} onEditDialod={this.handleShowAddDialog.bind(this)} />
-          <Dialog contentStyle={contentStyle} title="Delete this Contact" modal={false} open={this.props.deleteDialod}
+          <Grid contacts={this.props.contacts} onDeleteDialog={this.handleShowDialog.bind(this)} onEditDialog={this.handleShowAddDialog.bind(this)} />
+          <Dialog contentStyle={contentStyle} title="Delete this Contact" modal={false} open={this.props.deleteDialog}
             onRequestClose={this.handleClose} actions={actions} >
             Deleted contact can not be recovered, Are you sure to Delete ?
           </Dialog>
-          <AddDialog addDialod={this.props.addDialod} dialogActions={this.props.dialogActions} editingContact={this.props.editingContact} />
+          <AddDialog addDialog={this.props.addDialog} dialogActions={this.props.dialogActions} editingContact={this.props.editingContact} />
         </div>
       </div>
     )

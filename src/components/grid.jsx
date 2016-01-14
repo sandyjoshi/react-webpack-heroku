@@ -11,7 +11,7 @@ export default class Grid extends React.Component {
     return (
       <div className='grid'>
         {this.props.contacts.map(function (item, index) {
-            return ( <Item {...item} onDeleteDialod={this.props.onDeleteDialod} onEditDialod={this.props.onEditDialod}/> )
+            return ( <Item {...item} onDeleteDialog={this.props.onDeleteDialog} onEditDialog={this.props.onEditDialog}/> )
           }, this)
         }
       </div>
