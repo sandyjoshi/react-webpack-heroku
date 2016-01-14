@@ -34,7 +34,7 @@ export default class ContactManagerView extends React.Component {
   };
 
   handleCloseDialog = () => {
-    this.props.dialogActions.closeDialog();
+    this.props.dialogActions.closeDeleteDialog();
   };
 
   handleDeleteConfirmed = () => {
@@ -42,7 +42,7 @@ export default class ContactManagerView extends React.Component {
   };
 
   handleShowDialog = (id) => {
-    this.props.dialogActions.showDialog(id);
+    this.props.dialogActions.showDeleteDialog(id);
   };
 
   handleShowAddDialog = (id) => {

@@ -8,9 +8,9 @@ const addDialogStyle = { width : 310 };
 
 export default class AddDialog extends React.Component {
   static propTypes = {
-    editingContact: React.PropTypes.object,
-    dialogActions: React.PropTypes.object,
-    addDialog: React.PropTypes.bool
+    editingContact: React.PropTypes.object.isRequired,
+    dialogActions: React.PropTypes.object.isRequired,
+    addDialog: React.PropTypes.bool.isRequired
   };
 
   constructor() {
@@ -44,6 +44,7 @@ export default class AddDialog extends React.Component {
     this.props.dialogActions.AddUpdateContact(data);
   };
 
+  // internal state maintaing
   handleChangeName = () => {
     this.setState({ name : this.refs.name.getValue() });
   }
