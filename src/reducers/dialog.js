@@ -95,7 +95,7 @@ export default createReducer(initialState, {
   	}
   	else {
   		// ToDo: change Generate ID method.
-  		payload.id = state.contacts[ state.contacts.length - 1 ].id + 1;
+  		payload.id = ( state.contacts.length ? ( state.contacts[ state.contacts.length - 1 ].id + 1 ) : 1 );
 	  	state.contacts.push(payload) ;
   	}
     return Object.assign({}, state, {

@@ -44,9 +44,10 @@ export default class ContactManagerView extends React.Component {
   generateContactItems = () => {
     return (
       <div className='grid'>
-        {this.props.contacts.map(function (item, index) {
-            return ( <ContactItem key={index} {...item} onDeleteDialog={this.showDeleteDialog} onEditDialog={this.showAddDialog}/> )
-          }, this)
+        { (this.props.contacts.length === 0 ) ? 'Please add new contact by pressing + button above.' :
+          this.props.contacts.map(function (item, index) {
+              return ( <ContactItem key={index} {...item} onDeleteDialog={this.showDeleteDialog} onEditDialog={this.showAddDialog}/> )
+            }, this)
         }
       </div>
     );
