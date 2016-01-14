@@ -16,21 +16,24 @@ export default class AddDialog extends React.Component {
   constructor() {
     super();
     this.state = {
-      changedEmail : false,
-      changedName : false,
-      changedTel : false
+      name : null,
+      tell : null,
+      email : null
     };
     this.handleChangeTel = this.handleChangeTel.bind(this);
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangeName = this.handleChangeName.bind(this);
   };
 
+  // close the dialog.
   handleCloseDialog = () => {
     this.resetState();
     this.props.dialogActions.closeAddDialog();
   };
 
+  // Update/Add new contact.
   handleAddDialog = () => {
+    // ToDO : validation for saving data.
     const data = {
       id : (this.props.editingContact ? this.props.editingContact.id : null),
       name : this.refs.name.getValue(),
@@ -42,26 +45,26 @@ export default class AddDialog extends React.Component {
   };
 
   handleChangeName = () => {
-    this.setState({ changedName : true , name : this.refs.name.getValue() });
+    this.setState({ name : this.refs.name.getValue() });
   }
 
   handleChangeEmail = () => {
-    this.setState({ changedEmail : true , email : this.refs.email.getValue() });
+    this.setState({ email : this.refs.email.getValue() });
   }
 
   handleChangeTel = () => {
-    this.setState({ changedTel : true , tel : this.refs.tel.getValue() });
+    this.setState({ tel : this.refs.tel.getValue() });
   }
 
   resetState = () => {
-    this.setState({ changedName : false , changedEmail : false , changedTel : false , name : null , tell : null , email : null });
+    this.setState({ name : null , tel : null , email : null });
   }
 
   render() {
     const updateButtonText = this.props.editingContact ? "Update" : "Add" ;
-    const name = this.state.changedName ? this.state.name : ( this.props.editingContact ? this.props.editingContact.name : "" ) ;
-    const email = this.state.changedEmail ? this.state.email : ( this.props.editingContact ? this.props.editingContact.email : "" );
-    const tel = this.state.changedTel ? this.state.tel : ( this.props.editingContact ? this.props.editingContact.tel : "" );
+    const name = this.state.name ? this.state.name : ( this.props.editingContact ? this.props.editingContact.name : "" ) ;
+    const email = this.state.email ? this.state.email : ( this.props.editingContact ? this.props.editingContact.email : "" );
+    const tel = this.state.tel ? this.state.tel : ( this.props.editingContact ? this.props.editingContact.tel : "" );
 
     const actionsAddDialog = [
       <FlatButton
