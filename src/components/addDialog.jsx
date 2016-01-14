@@ -17,8 +17,13 @@ export default class AddDialog extends React.Component {
   };
 
   handleCloseDialog = () => {
+    this.resetState();
     this.props.dialogActions.closeAddDialog();
   };
+
+  resetState = () => {
+    this.setState({ changedName : false , changedEmail : false , changedTel : false , name : null , tell : null , email : null });
+  }
 
   handleAddDialog = () => {
     let data = {
@@ -27,6 +32,7 @@ export default class AddDialog extends React.Component {
       tel : this.refs.tel.getValue(),
       email : this.refs.email.getValue(),
     };
+    this.resetState();
     this.props.dialogActions.AddUpdateContact(data);
   };
 
@@ -45,9 +51,9 @@ export default class AddDialog extends React.Component {
   render() {
     const updateText = this.props.editingContact ? "Update" : "Add" ;
 
-    let name = this.props.editingContact ? ( this.state.changedName ? this.state.name : this.props.editingContact.name ) : "" ;
-    let email = this.props.editingContact ? ( this.state.changedEmail ? this.state.email : this.props.editingContact.email ) : "" ;
-    let tel = this.props.editingContact ? ( this.state.changedTel ? this.state.tel : this.props.editingContact.tel ) : "" ;
+    let name = this.state.changedName ? this.state.name : ( this.props.editingContact ? this.props.editingContact.name : "" ) ;
+    let email = this.state.changedEmail ? this.state.email : ( this.props.editingContact ? this.props.editingContact.email : "" );
+    let tel = this.state.changedTel ? this.state.tel : ( this.props.editingContact ? this.props.editingContact.tel : "" );
 
     const contentStyle = {
       width : 310
