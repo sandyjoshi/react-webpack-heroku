@@ -8,7 +8,7 @@ const addDialogStyle = { width : 310 };
 
 export default class AddDialog extends React.Component {
   static propTypes = {
-    editingContact: React.PropTypes.object.isRequired,
+    editingContact: React.PropTypes.object,
     dialogActions: React.PropTypes.object.isRequired,
     addDialog: React.PropTypes.bool.isRequired
   };
