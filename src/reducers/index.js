@@ -6,9 +6,9 @@ import {
   routerStateReducer
 }
 from 'redux-router';
-import grid from './grid';
+import dialog from './dialog';
 
 export default combineReducers({
-  grid,
+  dialog,
   router: routerStateReducer
 });

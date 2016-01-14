@@ -11,10 +11,10 @@ import AddDialog from './addDialog';
 
 
 const mapStateToProps = (state) => ({
-    contacts: state.grid.contacts,
-    deleteDialog : state.grid.deleteDialog,
-    addDialog : state.grid.addDialog,
-    editingContact : state.grid.editingContact
+    contacts: state.dialog.contacts,
+    deleteDialog : state.dialog.deleteDialog,
+    addDialog : state.dialog.addDialog,
+    editingContact : state.dialog.editingContact
 
 });
 
