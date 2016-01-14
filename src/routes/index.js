@@ -1,6 +1,6 @@
 import React                 from 'react';
 import { Route, IndexRedirect, IndexRoute, Redirect } from 'react-router';
-import ContactManagerView              from '../components/app';
+import ContactManagerView              from '../components/contactManagerView';
 
 export default (
   <Route path='/' >

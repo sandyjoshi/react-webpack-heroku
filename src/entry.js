@@ -1,5 +1,4 @@
 import React from 'react';
-import App from './components/app';
 import '../css/app.scss';
 import ReactDOM       from 'react-dom';
 import Root           from './containers/Root';
