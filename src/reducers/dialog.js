@@ -1,12 +1,12 @@
 import { createReducer }     from '../utils';
+import dialogConstants from '../constants/dialog';
 
 const initialState = {
 	deleteDialog: false,
 	addDialog : false,
 	deletingContactId : null,
 	editingContact : null,
-    contacts:
-    [
+  contacts:[
 		{
 			id: 1,
 			name : 'Terrence S. Hatfield',
@@ -48,21 +48,21 @@ const initialState = {
 
 export default createReducer(initialState, {
 
-  ['SHOW_DELETE_DIALOG'] : (state, payload) => {
+  [dialogConstants.SHOW_DELETE_DIALOG] : (state, payload) => {
     return Object.assign({}, state, {
       deleteDialog: true,
       deletingContactId : payload
     });
   },
 
-  ['CLOSE_DELETE_DIALOG'] : (state, payload) => {
+  [dialogConstants.CLOSE_DELETE_DIALOG] : (state, payload) => {
     return Object.assign({}, state, {
        deleteDialog: false,
        deletingContactId : null
     });
   },
 
-  ['DELETE_CONFIRMED'] : (state, payload) => {
+  [dialogConstants.DELETE_CONFIRMED] : (state, payload) => {
     let deleteId = state.deletingContactId ;
     let index = state.contacts.findIndex( (item) => deleteId == item.id );
     state.contacts.splice( index , 1 );
@@ -71,7 +71,7 @@ export default createReducer(initialState, {
     });
   },
 
-  ['SHOW_ADD_DIALOG'] : (state, payload) => {
+  [dialogConstants.SHOW_ADD_DIALOG] : (state, payload) => {
     let index = state.contacts.findIndex( (item) => payload == item.id );
     let editingContact = state.contacts[index];
     return Object.assign({}, state, {
@@ -80,14 +80,14 @@ export default createReducer(initialState, {
     });
   },
 
-  ['CLOSE_ADD_DIALOG'] : (state, payload) => {
+  [dialogConstants.CLOSE_ADD_DIALOG] : (state, payload) => {
     return Object.assign({}, state, {
        addDialog: false,
        editingContact : null
     });
   },
 
-  ['ADD_UPDATE_CONTACT'] : (state, payload) => {
+  [dialogConstants.ADD_UPDATE_CONTACT] : (state, payload) => {
   	let updateId = payload.id;
   	let index = state.contacts.findIndex( (item) => updateId == item.id );
   	if( index > -1 ) {

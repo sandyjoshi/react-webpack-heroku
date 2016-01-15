@@ -6,3 +6,11 @@ export function createReducer (initialState, fnMap) {
     return handler ? handler(state, payload) : state;
   };
 }
+
+export function createConstants (...constants) {
+  return constants.reduce((acc, constant) => {
+    acc[constant] = constant;
+    return acc;
+  }, {});
+}
+
