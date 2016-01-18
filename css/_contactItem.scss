@@ -1,7 +1,9 @@
 $total-width : 400;
 $image-width : 128;
 $image-height : 128;
-$light-color : #D4D4D4;
+$light-color : #b3b3b3;
+$border-light-color : #D4D4D4;
+
 
 %overflow{
 	white-space: nowrap;
@@ -23,7 +25,7 @@ $light-color : #D4D4D4;
 	}
 
 	.image{
-		border: 1px solid $light-color;
+		border: 1px solid $border-light-color;
 		width: $image-width;
 		height: $image-height;
 		float: left;
