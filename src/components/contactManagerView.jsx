@@ -31,7 +31,12 @@ export default class ContactManagerView extends React.Component {
     super();
     this.showDeleteDialog = this.showDeleteDialog.bind(this);
     this.showAddDialog = this.showAddDialog.bind(this);
+    this.showHomePage = this.showHomePage.bind(this);
   };
+
+  showHomePage = () => {
+    this.props.history.pushState(null, '/');
+  }
 
   showDeleteDialog = (id) => {
     this.props.dialogActions.showDeleteDialog(id);
@@ -56,7 +61,7 @@ export default class ContactManagerView extends React.Component {
   render() {
     return(
       <div>
-        <AppBar title="Contact Manager" onRightIconButtonTouchTap={this.showAddDialog} showMenuIconButton={false} iconClassNameRight="icon-add" />
+        <AppBar title="Contact Manager" onTitleTouchTap={this.showHomePage} onRightIconButtonTouchTap={this.showAddDialog} showMenuIconButton={false} iconClassNameRight="icon-add" />
         <div className="grid-container">
           <h1 className="header"> List of Contacts </h1>
           {this.generateContactItems()}
