@@ -31,7 +31,7 @@ export default class Item extends React.Component {
   render () {
     // ToDo : Change icon button. there is no click event.
     return (
-      <div className='contact-item'>
+      <li className='contact-item'>
         <IconButton className="delete-button" style={styleDeleteButton} onFocus={this.handleCloseClick} iconClassName="icon-delete" />
         <div className="image"></div>
         <div className="details">
@@ -42,7 +42,7 @@ export default class Item extends React.Component {
           <div className="value" title={ this.props.email }>{ this.props.email }</div>
           <RaisedButton style={styleEditButton} label="edit" onTouchTap={this.handleEditClick}/>
         </div>
-      </div>
+      </li>
     );
   }
 }

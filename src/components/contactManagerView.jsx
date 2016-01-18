@@ -43,13 +43,13 @@ export default class ContactManagerView extends React.Component {
 
   generateContactItems = () => {
     return (
-      <div className='grid'>
+      <ul className='grid'>
         { (this.props.contacts.length === 0 ) ? (<div className="empty-note">Please add new contact by pressing <span className="plus-sign">+</span> button above.</div>) :
           this.props.contacts.map(function (item, index) {
               return ( <ContactItem key={index} {...item} onDeleteDialog={this.showDeleteDialog} onEditDialog={this.showAddDialog}/> )
             }, this)
         }
-      </div>
+      </ul>
     );
   }
 

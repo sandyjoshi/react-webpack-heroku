@@ -81,9 +81,11 @@ export default class AddDialog extends React.Component {
     return(
       <Dialog contentStyle={addDialogStyle} title="Add Contact" modal={false} open={this.props.addDialog}
         onRequestClose={this.handleClose} actions={actionsAddDialog} >
-        <TextField ref="name" value={name} onChange={this.handleChangeName} hintText='Full Name' />
-        <TextField ref="email" value={email} onChange={this.handleChangeEmail} hintText="Email Address" />
-        <TextField ref="tel" value={tel} onChange={this.handleChangeTel} hintText="Telephone Number" />
+        <form>
+          <TextField ref="name" value={name} onChange={this.handleChangeName} hintText='Full Name' />
+          <TextField ref="email" value={email} onChange={this.handleChangeEmail} hintText="Email Address" />
+          <TextField ref="tel" value={tel} onChange={this.handleChangeTel} hintText="Telephone Number" />
+        </form>
       </Dialog>)
   }
 }
